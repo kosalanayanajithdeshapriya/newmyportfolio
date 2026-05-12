@@ -1875,6 +1875,60 @@
       transform: translateY(-2px);
     }
 
+    .availability-strip {
+      background: rgba(74, 222, 128, 0.04);
+      border: 1px solid rgba(74, 222, 128, 0.2);
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .availability-status {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .availability-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #4ade80;
+      animation: pulse 2s infinite;
+      flex-shrink: 0;
+    }
+
+    .availability-text {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      color: #4ade80;
+    }
+
+    .availability-tags {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .availability-tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6rem;
+      padding: 0.2rem 0.6rem;
+      border: 1px solid rgba(74, 222, 128, 0.25);
+      color: #4ade80;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.4); }
+      70% { box-shadow: 0 0 0 10px rgba(74, 222, 128, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+    }
+
     /* ========== CONTACT ========== */
     #contact {
       border-top: 1px solid var(--border);
@@ -2617,6 +2671,43 @@
       /* Contact */
       .contact-layout {
         gap: 2rem;
+      }
+
+      /* Resume */
+      .resume-inner {
+        padding: 3rem 1.2rem;
+      }
+
+      .resume-card {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+        padding: 2rem 1.5rem;
+      }
+
+      .btn-download {
+        margin-left: 0 !important;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .resume-file-meta {
+        font-size: 0.7rem;
+      }
+
+      .availability-strip {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.5rem 1rem;
+      }
+
+      .availability-tags {
+        justify-content: center;
+      }
+
+      .availability-text {
+        font-size: 0.65rem;
       }
 
       /* Splash Screen */
@@ -4287,29 +4378,17 @@
         </div>
 
         <!-- Open to work badge strip -->
-        <div
-          style="background:rgba(74,222,128,0.04);border:1px solid rgba(74,222,128,0.2);padding:1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:2rem;">
-          <div style="display:flex;align-items:center;gap:0.8rem;">
-            <span
-              style="width:8px;height:8px;border-radius:50%;background:#4ade80;animation:pulse 2s infinite;flex-shrink:0;"></span>
-            <span
-              style="font-family:'IBM Plex Mono',monospace;font-size:0.72rem;letter-spacing:0.1em;color:#4ade80;">IMMEDIATELY
-              AVAILABLE FOR REMOTE ROLES</span>
+        <div class="availability-strip">
+          <div class="availability-status">
+            <span class="availability-dot"></span>
+            <span class="availability-text">IMMEDIATELY AVAILABLE FOR REMOTE ROLES</span>
           </div>
-          <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
-            <span
-              style="font-family:'IBM Plex Mono',monospace;font-size:0.6rem;padding:0.2rem 0.6rem;border:1px solid rgba(74,222,128,0.25);color:#4ade80;">AI/ML
-              Engineering</span>
-            <span
-              style="font-family:'IBM Plex Mono',monospace;font-size:0.6rem;padding:0.2rem 0.6rem;border:1px solid rgba(74,222,128,0.25);color:#4ade80;">Data
-              Science</span>
-            <span
-              style="font-family:'IBM Plex Mono',monospace;font-size:0.6rem;padding:0.2rem 0.6rem;border:1px solid rgba(74,222,128,0.25);color:#4ade80;">MLOps</span>
-            <span
-              style="font-family:'IBM Plex Mono',monospace;font-size:0.6rem;padding:0.2rem 0.6rem;border:1px solid rgba(74,222,128,0.25);color:#4ade80;">DevOps</span>
-            <span
-              style="font-family:'IBM Plex Mono',monospace;font-size:0.6rem;padding:0.2rem 0.6rem;border:1px solid rgba(74,222,128,0.25);color:#4ade80;">Full-Stack
-              Dev</span>
+          <div class="availability-tags">
+            <span class="availability-tag">AI/ML Engineering</span>
+            <span class="availability-tag">Data Science</span>
+            <span class="availability-tag">MLOps</span>
+            <span class="availability-tag">DevOps</span>
+            <span class="availability-tag">Full-Stack Dev</span>
           </div>
         </div>
 
